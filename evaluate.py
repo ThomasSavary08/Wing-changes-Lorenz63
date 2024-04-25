@@ -34,16 +34,18 @@ plt.ylabel('True Label')
 plt.title('Confusion Matrix')
 plt.show()
 
-# Load trajectory, compute the angles and make predictions
+# Load trajectory
 traj, CLV_ = np.load('./CLVs/testTraj_1.npy'), np.load('./CLVs/testCLV_1.npy')
 n, dim, _ = CLV_.shape
 
+# Compute angles
 angles = np.zeros((n, dim))
 for j in range(n):
     angles[j,0] = np.arccos(np.dot(CLV_[j,:,0], CLV_[j,:,1]))
     angles[j,1] = np.arccos(np.dot(CLV_[j,:,0], CLV_[j,:,2]))
     angles[j,2] = np.arccos(np.dot(CLV_[j,:,1], CLV_[j,:,2]))
 
+# Compute predictions
 predictions = []
 new_traj = []
 for j in range(seq_length, n):
@@ -57,9 +59,10 @@ new_traj = np.asarray(new_traj)
 
 # Plot predictions
 plt.figure()
-plt.plot(new_traj[:,0], color = "blue", label = r'$x_{1}$')
-plt.plot(new_traj[:,1], color = "black", label = r'$x_{2}$')
+plt.plot(new_traj[:,0], color = "blue", label = r'$x_{1}(t)$')
+plt.plot(new_traj[:,1], color = "black", label = r'$x_{2}(t)$')
 plt.plot(5*predictions, color = "red", label = "Predictions")
 plt.xlabel(r'$t$')
+plt.title("Prediction of the trained model")
 plt.legend()
 plt.show()
