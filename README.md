@@ -9,6 +9,7 @@ we trained the model to predict one of the following three categories using the 
 
 ```math
 \begin{equation}
+    \Theta(t) = 
     \begin{pmatrix}
         \theta_{12}^{t-199} & \cdots & \cdots & \theta_{12}^{t}\\
         \theta_{13}^{t-199} & \cdots & \cdots & \theta_{13}^{t}\\
@@ -24,14 +25,23 @@ we trained the model to predict one of the following three categories using the 
 \end{equation}
 ```
 
-Most projects are developed in Python: the environment can then be copied using the following command
-
+## Installation
+The environment can be copied using the following command
 ```console
 conda env create --name ENVNAME --file environment.yml
 ```
 
-For projects containing a demonstration, this can be launched with the following command
+## Results
+Once the network has been trained, we obtain 97% accuracy on the validation data.
+<p align="center">
+  <img src="./Images/conf_matrix.png">
+</p>
+So, given a matrix $\Theta(t)$, the network is able to provide information about the time before next change.
+**The aim is to continue this work on intermittent chaotic systems in order to predict regime changes.**
 
+## Visualisation
+An example of the use of the trained network in parallel with the system dynamics can be seen executing `animation.py`,
+or more simply by executing the following command:
 ```console
 bash run.sh
 ```
