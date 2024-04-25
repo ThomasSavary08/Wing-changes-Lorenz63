@@ -36,6 +36,7 @@ Once the network has been trained, we obtain 97% accuracy on the validation data
 <p align="center">
   <img src="./Images/conf_matrix.png">
 </p>
+
 So, given a matrix $\Theta(t)$, the network is able to provide information about the time before next change.
 **The aim is to continue this work on intermittent chaotic systems in order to predict regime changes.**
 
