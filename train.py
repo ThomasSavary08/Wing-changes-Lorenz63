@@ -12,14 +12,14 @@ import matplotlib.pyplot as plt
 input_size = 3
 hidden_size = 128
 n_layers = 1
-dropout = 0.1
+dropout = 0
 classifier_dim = [128,64]
 n_classes = 3
 
 # Training parameters
 n_epochs = 20
 batch_size = 256
-init_lr = 1e-4
+init_lr = 4e-3
 best_score = math.inf
 
 # Load datasets
