@@ -13,13 +13,13 @@ input_size = 3
 hidden_size = 128
 n_layers = 1
 dropout = 0.1
-classifier_dim = [64,32]
+classifier_dim = [128,64]
 n_classes = 3
 
 # Training parameters
-n_epochs = 10
-batch_size = 128
-init_lr = 4e-3
+n_epochs = 20
+batch_size = 256
+init_lr = 1e-4
 best_score = math.inf
 
 # Load datasets
@@ -41,7 +41,7 @@ network = network.to(device)
 # Loss, optimizer and scheduler
 criterion = nn.CrossEntropyLoss(reduction = "mean")
 optimizer = torch.optim.AdamW(network.parameters(), lr = init_lr)
-scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, n_epochs, 1e-7, verbose = False)
+scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, n_epochs, 1e-8, verbose = False)
 list_train_loss = []
 list_val_loss = []
 
