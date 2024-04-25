@@ -12,7 +12,7 @@ we trained the model to predict one of the following three categories using the 
     \begin{pmatrix}
         \theta_{12}^{t-199} & \cdots & \cdots & \theta_{12}^{t}\\
         \theta_{13}^{t-199} & \cdots & \cdots & \theta_{13}^{t}\\
-        \theta_{23}^{t-199} & \cdots & \cdots & \theta_{23}^{t}\\
+        \theta_{23}^{t-199} & \cdots & \cdots & \theta_{23}^{t}
     \end{pmatrix}
     \longrightarrow \left\{
     \begin{array}{ll}
